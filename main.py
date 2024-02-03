@@ -82,7 +82,7 @@ def post_user(vaga:Vaga):
         print("Error: ", e)
         return {"message": "User creation failed"}
 
-# DELETE A NAME
+# DELETE A USER
 @app.delete("/user")
 def delete_name(id:str):
     try:
@@ -91,7 +91,7 @@ def delete_name(id:str):
             supabase.from_("vaga")\
                 .delete().eq("id", id)\
                 .execute()
-            return {"message": "Name deleted successfully"}
+            return {"message": "User deleted successfully"}
 
         else:
             return {"message": "User deletion failed"}
